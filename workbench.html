@@ -1,0 +1,634 @@
+{\rtf1\ansi\ansicpg936\cocoartf2907
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 <!DOCTYPE html>\
+<html lang="zh-CN">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u38597 \u20856 \u23068 \u20070 \u25151  | \u20010 \u20154 \u24037 \u20316 \u21488 </title>\
+    <style>\
+        :root \{\
+            --bg-paper: #f5f2eb;\
+            --bg-card: #fdfbf7;\
+            --bg-sidebar: #2c352d;\
+            --text-primary: #3e362e;\
+            --text-secondary: #6b5d50;\
+            --text-light: #9a8c7a;\
+            --accent-gold: #b59a5a;\
+            --accent-green: #4a6b50;\
+            --accent-red: #8c4a4a;\
+            --border-color: #d8d0c0;\
+            --shadow: 0 4px 12px rgba(62, 54, 46, 0.06);\
+        \}\
+\
+        * \{ margin: 0; padding: 0; box-sizing: border-box; \}\
+\
+        body \{\
+            font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', Georgia, 'Times New Roman', serif;\
+            background-color: var(--bg-paper);\
+            color: var(--text-primary);\
+            line-height: 1.6;\
+            display: flex;\
+            min-height: 100vh;\
+        \}\
+\
+        /* \uc0\u20391 \u36793 \u26639  */\
+        .sidebar \{\
+            width: 260px;\
+            background-color: var(--bg-sidebar);\
+            color: #e8e3d7;\
+            padding: 30px 0;\
+            display: flex;\
+            flex-direction: column;\
+            position: fixed;\
+            height: 100vh;\
+            overflow-y: auto;\
+            border-right: 1px solid #1e241f;\
+        \}\
+\
+        .sidebar-brand \{\
+            padding: 0 24px 30px;\
+            border-bottom: 1px solid rgba(255,255,255,0.1);\
+            margin-bottom: 20px;\
+        \}\
+\
+        .sidebar-brand h1 \{\
+            font-size: 22px;\
+            font-weight: 600;\
+            letter-spacing: 2px;\
+            color: var(--accent-gold);\
+        \}\
+\
+        .sidebar-brand p \{\
+            font-size: 12px;\
+            color: #a39b8e;\
+            margin-top: 4px;\
+            font-style: italic;\
+        \}\
+\
+        .nav-menu \{ list-style: none; flex: 1; \}\
+\
+        .nav-item \{\
+            padding: 14px 24px;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+            font-size: 15px;\
+            display: flex;\
+            align-items: center;\
+            gap: 12px;\
+            border-left: 3px solid transparent;\
+            color: #c4bfb3;\
+        \}\
+\
+        .nav-item:hover \{ background: rgba(255,255,255,0.05); color: #fff; \}\
+        .nav-item.active \{ \
+            background: rgba(181, 154, 90, 0.1); \
+            border-left-color: var(--accent-gold); \
+            color: var(--accent-gold);\
+            font-weight: 600;\
+        \}\
+\
+        .nav-icon \{ font-size: 18px; width: 24px; text-align: center; \}\
+\
+        .sidebar-footer \{\
+            padding: 20px 24px;\
+            border-top: 1px solid rgba(255,255,255,0.1);\
+            font-size: 12px;\
+            color: #7a7365;\
+            text-align: center;\
+        \}\
+\
+        /* \uc0\u20027 \u20869 \u23481 \u21306  */\
+        .main-content \{\
+            flex: 1;\
+            margin-left: 260px;\
+            padding: 40px;\
+            max-width: 1200px;\
+        \}\
+\
+        /* \uc0\u39030 \u37096 \u38382 \u20505 \u19982 \u32943 \u23450 \u35821  */\
+        .header-section \{\
+            margin-bottom: 40px;\
+            padding-bottom: 30px;\
+            border-bottom: 1px solid var(--border-color);\
+        \}\
+\
+        .date-time \{\
+            font-size: 14px;\
+            color: var(--text-light);\
+            margin-bottom: 8px;\
+            letter-spacing: 1px;\
+        \}\
+\
+        .greeting \{\
+            font-size: 28px;\
+            font-weight: 600;\
+            color: var(--text-primary);\
+            margin-bottom: 20px;\
+        \}\
+\
+        .affirmation-card \{\
+            background: linear-gradient(135deg, #fdfbf7 0%, #f0ebd8 100%);\
+            border: 1px solid var(--border-color);\
+            border-left: 4px solid var(--accent-gold);\
+            padding: 20px 24px;\
+            border-radius: 4px;\
+            box-shadow: var(--shadow);\
+            position: relative;\
+        \}\
+\
+        .affirmation-label \{\
+            font-size: 11px;\
+            text-transform: uppercase;\
+            letter-spacing: 2px;\
+            color: var(--accent-gold);\
+            margin-bottom: 8px;\
+            font-weight: 600;\
+        \}\
+\
+        .affirmation-text \{\
+            font-size: 18px;\
+            font-style: italic;\
+            color: var(--text-secondary);\
+            line-height: 1.8;\
+        \}\
+\
+        /* \uc0\u32593 \u26684 \u24067 \u23616  */\
+        .dashboard-grid \{\
+            display: grid;\
+            grid-template-columns: 2fr 1fr;\
+            gap: 30px;\
+        \}\
+\
+        .card \{\
+            background: var(--bg-card);\
+            border: 1px solid var(--border-color);\
+            border-radius: 6px;\
+            padding: 24px;\
+            box-shadow: var(--shadow);\
+            transition: transform 0.2s ease;\
+        \}\
+\
+        .card:hover \{ transform: translateY(-2px); \}\
+\
+        .card-header \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            margin-bottom: 20px;\
+            padding-bottom: 12px;\
+            border-bottom: 1px solid var(--border-color);\
+        \}\
+\
+        .card-title \{\
+            font-size: 18px;\
+            font-weight: 600;\
+            color: var(--text-primary);\
+            display: flex;\
+            align-items: center;\
+            gap: 10px;\
+        \}\
+\
+        .card-title .icon \{ color: var(--accent-gold); \}\
+\
+        .card-action \{\
+            font-size: 13px;\
+            color: var(--accent-green);\
+            cursor: pointer;\
+            text-decoration: none;\
+            border-bottom: 1px dashed var(--accent-green);\
+        \}\
+\
+        /* \uc0\u23398 \u26415 \u31185 \u30740 \u27169 \u22359  */\
+        .literature-feed \{ margin-bottom: 24px; \}\
+        \
+        .lit-item \{\
+            padding: 16px 0;\
+            border-bottom: 1px dashed #e6e0d4;\
+            display: flex;\
+            gap: 16px;\
+        \}\
+        .lit-item:last-child \{ border-bottom: none; \}\
+\
+        .lit-status \{\
+            width: 8px;\
+            height: 8px;\
+            border-radius: 50%;\
+            background: var(--accent-red);\
+            margin-top: 8px;\
+            flex-shrink: 0;\
+        \}\
+        .lit-status.read \{ background: var(--accent-green); \}\
+\
+        .lit-content \{ flex: 1; \}\
+        .lit-title \{ font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); \}\
+        .lit-meta \{ font-size: 12px; color: var(--text-light); margin-bottom: 8px; \}\
+        .lit-abstract \{ font-size: 13px; color: var(--text-secondary); line-height: 1.6; \}\
+        \
+        .lit-tags \{ margin-top: 8px; display: flex; gap: 8px; \}\
+        .tag \{\
+            font-size: 11px;\
+            padding: 2px 8px;\
+            background: #f0ebd8;\
+            color: var(--text-secondary);\
+            border-radius: 3px;\
+            border: 1px solid #e0d8c3;\
+        \}\
+\
+        .research-progress \{ margin-top: 20px; \}\
+        .progress-item \{ margin-bottom: 16px; \}\
+        .progress-label \{ display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; color: var(--text-secondary); \}\
+        .progress-bar \{ height: 6px; background: #e8e3d7; border-radius: 3px; overflow: hidden; \}\
+        .progress-fill \{ height: 100%; background: var(--accent-green); border-radius: 3px; transition: width 0.5s ease; \}\
+\
+        /* \uc0\u32844 \u19994 \u21457 \u23637 \u27169 \u22359  */\
+        .goal-list \{ list-style: none; \}\
+        .goal-item \{\
+            display: flex;\
+            align-items: flex-start;\
+            gap: 12px;\
+            padding: 12px 0;\
+            border-bottom: 1px solid #f0ebd8;\
+        \}\
+        .goal-item:last-child \{ border-bottom: none; \}\
+        \
+        .goal-check \{\
+            width: 18px; height: 18px;\
+            border: 2px solid var(--border-color);\
+            border-radius: 4px;\
+            cursor: pointer;\
+            flex-shrink: 0;\
+            margin-top: 2px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            transition: all 0.2s;\
+        \}\
+        .goal-check.checked \{ background: var(--accent-green); border-color: var(--accent-green); \}\
+        .goal-check.checked::after \{ content: '\uc0\u10003 '; color: #fff; font-size: 12px; \}\
+        \
+        .goal-text \{ font-size: 14px; color: var(--text-primary); \}\
+        .goal-text.completed \{ text-decoration: line-through; color: var(--text-light); \}\
+        .goal-deadline \{ font-size: 11px; color: var(--accent-red); margin-top: 4px; \}\
+\
+        /* \uc0\u20010 \u20154 \u29983 \u27963 \u27169 \u22359  */\
+        .habit-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(2, 1fr);\
+            gap: 12px;\
+        \}\
+        .habit-card \{\
+            background: #f9f6f0;\
+            border: 1px solid var(--border-color);\
+            border-radius: 6px;\
+            padding: 16px;\
+            text-align: center;\
+            cursor: pointer;\
+            transition: all 0.2s;\
+        \}\
+        .habit-card:hover \{ background: #f0ebd8; \}\
+        .habit-card.done \{ background: #e8f0e9; border-color: var(--accent-green); \}\
+        .habit-icon \{ font-size: 24px; margin-bottom: 8px; \}\
+        .habit-name \{ font-size: 13px; color: var(--text-secondary); \}\
+        .habit-streak \{ font-size: 11px; color: var(--accent-gold); margin-top: 4px; font-weight: 600; \}\
+\
+        /* \uc0\u36130 \u21153 \u31649 \u29702 \u27169 \u22359  */\
+        .finance-summary \{\
+            display: grid;\
+            grid-template-columns: 1fr 1fr;\
+            gap: 16px;\
+            margin-bottom: 20px;\
+        \}\
+        .finance-box \{\
+            background: #f9f6f0;\
+            padding: 16px;\
+            border-radius: 6px;\
+            text-align: center;\
+            border: 1px solid var(--border-color);\
+        \}\
+        .finance-label \{ font-size: 12px; color: var(--text-light); margin-bottom: 4px; \}\
+        .finance-amount \{ font-size: 22px; font-weight: 600; \}\
+        .finance-amount.income \{ color: var(--accent-green); \}\
+        .finance-amount.expense \{ color: var(--accent-red); \}\
+\
+        .budget-list \{ list-style: none; \}\
+        .budget-item \{ margin-bottom: 12px; \}\
+        .budget-header \{ display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; \}\
+        .budget-bar \{ height: 4px; background: #e8e3d7; border-radius: 2px; overflow: hidden; \}\
+        .budget-fill \{ height: 100%; border-radius: 2px; \}\
+        .budget-fill.safe \{ background: var(--accent-green); \}\
+        .budget-fill.warning \{ background: var(--accent-gold); \}\
+        .budget-fill.danger \{ background: var(--accent-red); \}\
+\
+        /* \uc0\u21709 \u24212 \u24335  */\
+        @media (max-width: 1024px) \{\
+            .dashboard-grid \{ grid-template-columns: 1fr; \}\
+        \}\
+        @media (max-width: 768px) \{\
+            .sidebar \{ width: 80px; \}\
+            .sidebar-brand h1, .sidebar-brand p, .nav-item span:not(.nav-icon), .sidebar-footer \{ display: none; \}\
+            .nav-item \{ justify-content: center; padding: 16px 0; \}\
+            .main-content \{ margin-left: 80px; padding: 20px; \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+\
+    <!-- \uc0\u20391 \u36793 \u26639  -->\
+    <aside class="sidebar">\
+        <div class="sidebar-brand">\
+            <h1>\uc0\u38597 \u20856 \u23068 \u20070 \u25151 </h1>\
+            <p>Athena's Study</p>\
+        </div>\
+        <ul class="nav-menu">\
+            <li class="nav-item active"><span class="nav-icon">\uc0\u55356 \u57307 \u65039 </span> <span>\u24037 \u20316 \u21488 \u24635 \u35272 </span></li>\
+            <li class="nav-item"><span class="nav-icon">\uc0\u55357 \u56540 </span> <span>\u23398 \u26415 \u31185 \u30740 </span></li>\
+            <li class="nav-item"><span class="nav-icon">\uc0\u55358 \u56813 </span> <span>\u32844 \u19994 \u21457 \u23637 </span></li>\
+            <li class="nav-item"><span class="nav-icon">\uc0\u55356 \u57151 </span> <span>\u20010 \u20154 \u29983 \u27963 </span></li>\
+            <li class="nav-item"><span class="nav-icon">\uc0\u9878 \u65039 </span> <span>\u36130 \u21153 \u31649 \u29702 </span></li>\
+            <li class="nav-item"><span class="nav-icon">\uc0\u55357 \u56772 \u65039 </span> <span>\u30693 \u35782 \u24211 </span></li>\
+        </ul>\
+        <div class="sidebar-footer">\
+            <p>\uc0\u12300 \u23398 \u31350 \u22825 \u20154 \u65292 \u36947 \u36143 \u21476 \u20170 \u12301 </p>\
+        </div>\
+    </aside>\
+\
+    <!-- \uc0\u20027 \u20869 \u23481 \u21306  -->\
+    <main class="main-content">\
+        <!-- \uc0\u39030 \u37096 \u38382 \u20505 \u19982 \u32943 \u23450 \u35821  -->\
+        <header class="header-section">\
+            <div class="date-time" id="current-date"></div>\
+            <h2 class="greeting">\uc0\u26089 \u19978 \u22909 \u65292 \u25506 \u32034 \u32773 \u12290 </h2>\
+            <div class="affirmation-card">\
+                <div class="affirmation-label">\uc0\u10022  \u27599 \u26085 \u32943 \u23450 \u35821  Daily Affirmation</div>\
+                <div class="affirmation-text" id="daily-affirmation"></div>\
+            </div>\
+        </header>\
+\
+        <!-- \uc0\u20202 \u34920 \u30424 \u32593 \u26684  -->\
+        <div class="dashboard-grid">\
+            \
+            <!-- \uc0\u24038 \u20391 \u65306 \u23398 \u26415 \u31185 \u30740  (\u21344 2\u21015 ) -->\
+            <div style="display: flex; flex-direction: column; gap: 30px;">\
+                <!-- \uc0\u27599 \u26085 \u21069 \u27839 \u25991 \u29486 \u25512 \u36865  -->\
+                <div class="card">\
+                    <div class="card-header">\
+                        <div class="card-title"><span class="icon">\uc0\u55357 \u56540 </span> \u20170 \u26085 \u21069 \u27839 \u25991 \u29486 \u25512 \u36865 </div>\
+                        <a class="card-action" onclick="refreshLiterature()">\uc0\u21047 \u26032 \u25512 \u33616 </a>\
+                    </div>\
+                    <div class="literature-feed" id="literature-feed">\
+                        <!-- \uc0\u25991 \u29486 \u21015 \u34920 \u30001 JS\u21160 \u24577 \u29983 \u25104  -->\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u31185 \u30740 \u36827 \u24230  -->\
+                <div class="card">\
+                    <div class="card-header">\
+                        <div class="card-title"><span class="icon">\uc0\u55356 \u57263 </span> \u26680 \u24515 \u30740 \u31350 \u36827 \u24230 </div>\
+                        <a class="card-action">\uc0\u26597 \u30475 \u35814 \u24773 </a>\
+                    </div>\
+                    <div class="research-progress">\
+                        <div class="progress-item">\
+                            <div class="progress-label"><span>\uc0\u24320 \u39064 \u25253 \u21578 \u65306 \u25237 \u36164 \u20110 \u20154 \u19982 \u20154 \u30340 \u20840 \u38754 \u21457 \u23637 </span><span>85%</span></div>\
+                            <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>\
+                        </div>\
+                        <div class="progress-item">\
+                            <div class="progress-label"><span>\uc0\u12298 \u36164 \u26412 \u35770 \u12299 \u31532 \u19968 \u21367 \u31934 \u35835 \u19982 \u31508 \u35760 \u25972 \u29702 </span><span>60%</span></div>\
+                            <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>\
+                        </div>\
+                        <div class="progress-item">\
+                            <div class="progress-label"><span>\uc0\u20849 \u21516 \u23500 \u35029 \u22269 \u38469 \u27604 \u36739 \u25968 \u25454 \u25910 \u38598 </span><span>30%</span></div>\
+                            <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u21491 \u20391 \u65306 \u20854 \u20182 \u27169 \u22359  (\u21344 1\u21015 ) -->\
+            <div style="display: flex; flex-direction: column; gap: 30px;">\
+                \
+                <!-- \uc0\u32844 \u19994 \u21457 \u23637  -->\
+                <div class="card">\
+                    <div class="card-header">\
+                        <div class="card-title"><span class="icon">\uc0\u55358 \u56813 </span> \u32844 \u19994 \u21457 \u23637 </div>\
+                    </div>\
+                    <ul class="goal-list">\
+                        <li class="goal-item">\
+                            <div class="goal-check checked" onclick="toggleGoal(this)"></div>\
+                            <div>\
+                                <div class="goal-text completed">\uc0\u23436 \u25104 \u39640 \u26657 \u25945 \u32844 \u31616 \u21382 \u21021 \u31295 </div>\
+                                <div class="goal-deadline">\uc0\u24050 \u36798 \u25104 </div>\
+                            </div>\
+                        </li>\
+                        <li class="goal-item">\
+                            <div class="goal-check" onclick="toggleGoal(this)"></div>\
+                            <div>\
+                                <div class="goal-text">\uc0\u20934 \u22791 \u20840 \u22269 \u39532 \u29702 \u35770 \u23398 \u31185 \u35770 \u22363 \u25237 \u31295 </div>\
+                                <div class="goal-deadline">\uc0\u36317 \u31163 \u25130 \u27490 \u36824 \u26377  14 \u22825 </div>\
+                            </div>\
+                        </li>\
+                        <li class="goal-item">\
+                            <div class="goal-check" onclick="toggleGoal(this)"></div>\
+                            <div>\
+                                <div class="goal-text">\uc0\u23398 \u20064  Python \u25968 \u25454 \u29228 \u21462 \u19982 \u28165 \u27927 </div>\
+                                <div class="goal-deadline">\uc0\u26412 \u21608 \u30446 \u26631 \u65306 \u23436 \u25104 \u22522 \u30784 \u35821 \u27861 </div>\
+                            </div>\
+                        </li>\
+                    </ul>\
+                </div>\
+\
+                <!-- \uc0\u20010 \u20154 \u29983 \u27963  -->\
+                <div class="card">\
+                    <div class="card-header">\
+                        <div class="card-title"><span class="icon">\uc0\u55356 \u57151 </span> \u20010 \u20154 \u29983 \u27963 </div>\
+                    </div>\
+                    <div class="habit-grid">\
+                        <div class="habit-card done" onclick="toggleHabit(this)">\
+                            <div class="habit-icon">\uc0\u55357 \u56534 </div>\
+                            <div class="habit-name">\uc0\u35838 \u22806 \u38405 \u35835 </div>\
+                            <div class="habit-streak">\uc0\u36830 \u32493  12 \u22825 </div>\
+                        </div>\
+                        <div class="habit-card" onclick="toggleHabit(this)">\
+                            <div class="habit-icon">\uc0\u55356 \u57283 </div>\
+                            <div class="habit-name">\uc0\u20307 \u32946 \u38203 \u28860 </div>\
+                            <div class="habit-streak">\uc0\u36830 \u32493  3 \u22825 </div>\
+                        </div>\
+                        <div class="habit-card done" onclick="toggleHabit(this)">\
+                            <div class="habit-icon">\uc0\u55358 \u56792 </div>\
+                            <div class="habit-name">\uc0\u20901 \u24819 \u22797 \u30424 </div>\
+                            <div class="habit-streak">\uc0\u36830 \u32493  7 \u22825 </div>\
+                        </div>\
+                        <div class="habit-card" onclick="toggleHabit(this)">\
+                            <div class="habit-icon">\uc0\u55357 \u56484 </div>\
+                            <div class="habit-name">23:30\uc0\u21069 \u23601 \u23517 </div>\
+                            <div class="habit-streak">\uc0\u36830 \u32493  2 \u22825 </div>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u36130 \u21153 \u31649 \u29702  -->\
+                <div class="card">\
+                    <div class="card-header">\
+                        <div class="card-title"><span class="icon">\uc0\u9878 \u65039 </span> \u36130 \u21153 \u31649 \u29702 </div>\
+                    </div>\
+                    <div class="finance-summary">\
+                        <div class="finance-box">\
+                            <div class="finance-label">\uc0\u26412 \u26376 \u25910 \u20837  (\u27941 \u36148 /\u22870 \u23398 \u37329 )</div>\
+                            <div class="finance-amount income">\'a5 3,500</div>\
+                        </div>\
+                        <div class="finance-box">\
+                            <div class="finance-label">\uc0\u26412 \u26376 \u25903 \u20986 </div>\
+                            <div class="finance-amount expense">\'a5 1,840</div>\
+                        </div>\
+                    </div>\
+                    <ul class="budget-list">\
+                        <li class="budget-item">\
+                            <div class="budget-header"><span>\uc0\u39184 \u39278 \u19982 \u26085 \u24120 </span><span>\'a5800 / \'a51200</span></div>\
+                            <div class="budget-bar"><div class="budget-fill safe" style="width: 66%"></div></div>\
+                        </li>\
+                        <li class="budget-item">\
+                            <div class="budget-header"><span>\uc0\u36141 \u20070 \u19982 \u36164 \u26009 </span><span>\'a5350 / \'a5400</span></div>\
+                            <div class="budget-bar"><div class="budget-fill warning" style="width: 87%"></div></div>\
+                        </li>\
+                        <li class="budget-item">\
+                            <div class="budget-header"><span>\uc0\u31038 \u20132 \u19982 \u23089 \u20048 </span><span>\'a5150 / \'a5500</span></div>\
+                            <div class="budget-bar"><div class="budget-fill safe" style="width: 30%"></div></div>\
+                        </li>\
+                    </ul>\
+                </div>\
+\
+            </div>\
+        </div>\
+    </main>\
+\
+    <script>\
+        // 1. \uc0\u26085 \u26399 \u19982 \u38382 \u20505 \
+        function updateDateTime() \{\
+            const now = new Date();\
+            const options = \{ year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' \};\
+            document.getElementById('current-date').textContent = now.toLocaleDateString('zh-CN', options);\
+            \
+            const hour = now.getHours();\
+            let greetingText = "\uc0\u26089 \u19978 \u22909 \u65292 \u25506 \u32034 \u32773 \u12290 ";\
+            if (hour >= 12 && hour < 18) greetingText = "\uc0\u19979 \u21320 \u22909 \u65292 \u25506 \u32034 \u32773 \u12290 ";\
+            else if (hour >= 18) greetingText = "\uc0\u26202 \u19978 \u22909 \u65292 \u25506 \u32034 \u32773 \u12290 ";\
+            document.querySelector('.greeting').textContent = greetingText;\
+        \}\
+\
+        // 2. \uc0\u27599 \u26085 \u32943 \u23450 \u35821 \
+        const affirmations = [\
+            "\uc0\u29702 \u35770 \u30340 \u29983 \u21629 \u21147 \u22312 \u20110 \u19981 \u26029 \u21019 \u26032 \u65292 \u32780 \u25105 \u27491 \u36208 \u22312 \u25506 \u32034 \u30495 \u29702 \u30340 \u36335 \u19978 \u12290 ",\
+            "\uc0\u27599 \u19968 \u27425 \u28145 \u24230 \u30340 \u38405 \u35835 \u65292 \u37117 \u26159 \u19982 \u20255 \u22823 \u24605 \u24819 \u30340 \u36328 \u36234 \u26102 \u31354 \u30340 \u23545 \u35805 \u12290 ",\
+            "\uc0\u25105 \u19981 \u24807 \u24597 \u30693 \u35782 \u30340 \u28009 \u28698 \u65292 \u22240 \u20026 \u25105 \u30340 \u19987 \u27880 \u26159 \u29031 \u20142 \u26410 \u30693 \u30340 \u26126 \u28783 \u12290 ",\
+            "\uc0\u22312 \u36164 \u26412 \u30340 \u36923 \u36753 \u20043 \u22806 \u65292 \u25105 \u22987 \u32456 \u20851 \u27880 \u20154 \u30340 \u20840 \u38754 \u21457 \u23637 \u19982 \u30495 \u23454 \u31119 \u31049 \u12290 ",\
+            "\uc0\u23398 \u26415 \u26159 \u19968 \u22330 \u39532 \u25289 \u26494 \u65292 \u32780 \u38750 \u30701 \u36305 \u65307 \u25105 \u20801 \u35768 \u33258 \u24049 \u25353 \u29031 \u33410 \u22863 \u31283 \u27493 \u21069 \u34892 \u12290 ",\
+            "\uc0\u25105 \u30340 \u24605 \u32771 \u20855 \u26377 \u20215 \u20540 \u65292 \u25105 \u30340 \u30740 \u31350 \u33021 \u22815 \u20026 \u29702 \u35299 \u29616 \u23454 \u19990 \u30028 \u25552 \u20379 \u29420 \u29305 \u30340 \u35270 \u35282 \u12290 ",\
+            "\uc0\u25105 \u25509 \u32435 \u30740 \u31350 \u20013 \u30340 \u29942 \u39048 \u65292 \u37027 \u26159 \u24605 \u24819 \u27491 \u22312 \u30772 \u22303 \u32780 \u20986 \u30340 \u21069 \u20806 \u12290 "\
+        ];\
+\
+        function setDailyAffirmation() \{\
+            const today = new Date();\
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));\
+            const index = dayOfYear % affirmations.length;\
+            document.getElementById('daily-affirmation').textContent = `\'93$\{affirmations[index]\}\'94`;\
+        \}\
+\
+        // 3. \uc0\u25991 \u29486 \u25512 \u36865 \u27169 \u25311 \
+        const literaturePool = [\
+            \{\
+                title: "\uc0\u26032 \u36136 \u29983 \u20135 \u21147 \u39532 \u20811 \u24605 \u20027 \u20041 \u25919 \u27835 \u32463 \u27982 \u23398 \u38416 \u37322 ",\
+                journal: "\uc0\u12298 \u39532 \u20811 \u24605 \u20027 \u20041 \u30740 \u31350 \u12299  \'b7 2024\u24180 05\u26399 ",\
+                abstract: "\uc0\u26412 \u25991 \u20174 \u21382 \u21490 \u21807 \u29289 \u20027 \u20041 \u35270 \u35282 \u20986 \u21457 \u65292 \u25506 \u35752 \u26032 \u36136 \u29983 \u20135 \u21147 \u23545 \u20256 \u32479 \u21171 \u21160 \u36807 \u31243 \u30340 \u37325 \u22609 \u65292 \u20197 \u21450 \u20854 \u23545 \u21171 \u21160 \u21147 \u20215 \u20540 \u26500 \u25104 \u30340 \u28145 \u36828 \u24433 \u21709 ...",\
+                tags: ["\uc0\u26032 \u36136 \u29983 \u20135 \u21147 ", "\u21171 \u21160 \u36807 \u31243 ", "CSSCI"],\
+                read: false\
+            \},\
+            \{\
+                title: "\uc0\u20849 \u21516 \u23500 \u35029 \u35270 \u22495 \u19979 \'93\u25237 \u36164 \u20110 \u20154 \'94\u30340 \u25919 \u27835 \u32463 \u27982 \u23398 \u20998 \u26512 ",\
+                journal: "\uc0\u12298 \u32463 \u27982 \u30740 \u31350 \u12299  \'b7 2024\u24180 02\u26399 ",\
+                abstract: "\uc0\u25991 \u31456 \u36776 \u26512 \u20102 \'93\u25237 \u36164 \u20110 \u29289 \'94\u19982 \'93\u25237 \u36164 \u20110 \u20154 \'94\u22312 \u36164 \u26412 \u26377 \u26426 \u26500 \u25104 \u21464 \u21270 \u20013 \u30340 \u19981 \u21516 \u25928 \u24212 \u65292 \u25552 \u20986 \u20154 \u21147 \u36164 \u26412 \u31215 \u32047 \u26159 \u23454 \u29616 \u20849 \u21516 \u23500 \u35029 \u30340 \u26680 \u24515 \u26426 \u21046 ...",\
+                tags: ["\uc0\u20849 \u21516 \u23500 \u35029 ", "\u20154 \u21147 \u36164 \u26412 ", "\u39030 \u21002 "],\
+                read: false\
+            \},\
+            \{\
+                title: "\uc0\u21271 \u27431 \u31119 \u21033 \u22269 \u23478 \u27169 \u24335 \u23545 \u20013 \u22269 \u29305 \u33394 \u31038 \u20250 \u20445 \u38556 \u20307 \u31995 \u30340 \u21551 \u31034 ",\
+                journal: "\uc0\u12298 \u22269 \u22806 \u29702 \u35770 \u21160 \u24577 \u12299  \'b7 2023\u24180 11\u26399 ",\
+                abstract: "\uc0\u36890 \u36807 \u27604 \u36739 \u30740 \u31350 \u65292 \u20998 \u26512 \u21271 \u27431 \u22269 \u23478 \u22312 \u20844 \u20849 \u25945 \u32946 \u12289 \u21307 \u30103 \u31561 \'93\u20154 \u30340 \u20877 \u29983 \u20135 \'94\u39046 \u22495 \u30340 \u25237 \u36164 \u32463 \u39564 \u21450 \u20854 \u38754 \u20020 \u30340 \u36164 \u26412 \u36923 \u36753 \u22256 \u22659 ...",\
+                tags: ["\uc0\u22269 \u38469 \u27604 \u36739 ", "\u31119 \u21033 \u22269 \u23478 ", "\u31038 \u20250 \u20445 \u38556 "],\
+                read: true\
+            \},\
+            \{\
+                title: "\uc0\u25968 \u23383 \u36164 \u26412 \u20027 \u20041 \u26102 \u20195 \u20154 \u30340 \u20840 \u38754 \u21457 \u23637 \u22256 \u22659 \u19982 \u20986 \u36335 ",\
+                journal: "\uc0\u12298 \u21746 \u23398 \u30740 \u31350 \u12299  \'b7 2024\u24180 01\u26399 ",\
+                abstract: "\uc0\u25506 \u35752 \u31639 \u27861 \u25511 \u21046 \u19979 \u21171 \u21160 \u24322 \u21270 \u30340 \u26032 \u34920 \u29616 \u24418 \u24335 \u65292 \u24182 \u20174 \u39532 \u20811 \u24605 \u33258 \u30001 \u26102 \u38388 \u29702 \u35770 \u20986 \u21457 \u65292 \u37325 \u26500 \u25968 \u23383 \u26102 \u20195 \u20154 \u30340 \u20840 \u38754 \u21457 \u23637 \u36335 \u24452 ...",\
+                tags: ["\uc0\u25968 \u23383 \u36164 \u26412 \u20027 \u20041 ", "\u24322 \u21270 ", "\u20154 \u30340 \u20840 \u38754 \u21457 \u23637 "],\
+                read: false\
+            \}\
+        ];\
+\
+        function renderLiterature() \{\
+            const feed = document.getElementById('literature-feed');\
+            feed.innerHTML = '';\
+            // \uc0\u38543 \u26426 \u25277 \u21462 3\u31687 \
+            const shuffled = [...literaturePool].sort(() => 0.5 - Math.random());\
+            const selected = shuffled.slice(0, 3);\
+            \
+            selected.forEach(lit => \{\
+                const item = document.createElement('div');\
+                item.className = 'lit-item';\
+                item.innerHTML = `\
+                    <div class="lit-status $\{lit.read ? 'read' : ''\}"></div>\
+                    <div class="lit-content">\
+                        <div class="lit-title">$\{lit.title\}</div>\
+                        <div class="lit-meta">$\{lit.journal\}</div>\
+                        <div class="lit-abstract">$\{lit.abstract\}</div>\
+                        <div class="lit-tags">\
+                            $\{lit.tags.map(t => `<span class="tag">$\{t\}</span>`).join('')\}\
+                        </div>\
+                    </div>\
+                `;\
+                feed.appendChild(item);\
+            \});\
+        \}\
+\
+        function refreshLiterature() \{\
+            const feed = document.getElementById('literature-feed');\
+            feed.style.opacity = '0.5';\
+            setTimeout(() => \{\
+                renderLiterature();\
+                feed.style.opacity = '1';\
+            \}, 300);\
+        \}\
+\
+        // 4. \uc0\u20132 \u20114 \u21151 \u33021 \
+        function toggleGoal(el) \{\
+            el.classList.toggle('checked');\
+            const textEl = el.nextElementSibling.querySelector('.goal-text');\
+            textEl.classList.toggle('completed');\
+        \}\
+\
+        function toggleHabit(el) \{\
+            el.classList.toggle('done');\
+        \}\
+\
+        // \uc0\u20391 \u36793 \u26639 \u23548 \u33322 \
+        document.querySelectorAll('.nav-item').forEach(item => \{\
+            item.addEventListener('click', function() \{\
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));\
+                this.classList.add('active');\
+            \});\
+        \});\
+\
+        // \uc0\u21021 \u22987 \u21270 \
+        updateDateTime();\
+        setDailyAffirmation();\
+        renderLiterature();\
+    </script>\
+</body>\
+</html>}
